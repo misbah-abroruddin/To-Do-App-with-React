@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  width: inherit;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(19.6px);
+  -webkit-backdrop-filter: blur(19.6px);
+}
+
+.btn {
+  font-weight: bold;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  align-self: flex-start;
+  cursor: pointer;
+  background-color: rgb(15, 76, 117);
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(65, 53, 67);
+}
+
+.text_center {
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.text_left {
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.list_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  text-align: left;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.list {
+  align-self: center;
+}
+
+.form_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.form:focus {
+  outline: 1px solid rgb(20, 40, 80);
+}
+
+.text {
+  font-size: 10px;
+  color: red;
+}
