@@ -8,7 +8,8 @@ const Form = ({ handleSubmit }) => {
   const [userInput, setUserInput] = useState("");
   const [validation, setValidation] = useState(false);
 
-  const handleOnClick = () => {
+  const handleAddTask = (e) => {
+    e.preventDefault();
     if (userInput === "") {
       return setValidation(true);
     } else {
@@ -24,22 +25,20 @@ const Form = ({ handleSubmit }) => {
 
   return (
     <div className={styles.form_wrapper}>
-      <input
-        className={`${styles.form} ${
-          validation ? "shake validation" : "active"
-        }`}
-        type='text'
-        htmlFor='task'
-        id='task'
-        placeholder='Insert Task'
-        onChange={(event) => setUserInput(event.target.value)}
-        value={userInput}
-      ></input>
-      <Button
-        className={styles.btn}
-        textButton='Add Task'
-        handleOnClick={handleOnClick}
-      />
+      <form className={styles.form} onSubmit={handleAddTask}>
+        <input
+          className={`${styles.input} ${
+            validation ? "shake validation" : "active"
+          }`}
+          type='text'
+          htmlFor='task'
+          id='task'
+          placeholder='Insert Task'
+          onChange={(event) => setUserInput(event.target.value)}
+          value={userInput}
+        ></input>
+        <Button className={styles.btn} textButton='Add Task' />
+      </form>
     </div>
   );
 };

@@ -65,7 +65,9 @@
 }
 
 .form {
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 10px;
   padding: 10px 8px;
   border: none;
@@ -76,8 +78,15 @@
   -webkit-backdrop-filter: blur(5px);
 }
 
-.form:focus {
-  outline: 1px solid rgb(20, 40, 80);
+.input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 8px;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: 2px solid rgb(20, 40, 80);
 }
 
 .text {
