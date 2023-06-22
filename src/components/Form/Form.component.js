@@ -37,7 +37,7 @@ const Form = ({ handleSubmit }) => {
           onChange={(event) => setUserInput(event.target.value)}
           value={userInput}
         ></input>
-        <Button className={styles.btn} textButton='Add' />
+        <Button className={styles.btn} textButton='Add Task' />
       </form>
     </div>
   );
