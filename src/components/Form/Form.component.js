@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import uuid from "react-uuid";
+import React, { useState } from 'react';
+import uuid from 'react-uuid';
 
-import Button from "../Button/Button.component";
-import styles from "../../containers/ToDo.module.css";
+import Button from '../Button/Button.component';
+import styles from '../../containers/ToDo.module.css';
 
 const Form = ({ handleSubmit }) => {
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState('');
   const [validation, setValidation] = useState(false);
 
   const handleAddTask = (e) => {
     e.preventDefault();
-    if (userInput === "") {
+    if (userInput === '') {
       return setValidation(true);
     } else {
       handleSubmit({
@@ -19,7 +19,7 @@ const Form = ({ handleSubmit }) => {
         complete: false,
       });
     }
-    setUserInput("");
+    setUserInput('');
     return setValidation(false);
   };
 
@@ -28,16 +28,16 @@ const Form = ({ handleSubmit }) => {
       <form className={styles.form} onSubmit={handleAddTask}>
         <input
           className={`${styles.input} ${
-            validation ? "shake validation" : "active"
+            validation ? 'shake validation' : 'active'
           }`}
           type='text'
           htmlFor='task'
           id='task'
           placeholder='Insert Task'
-          onChange={(event) => setUserInput(event.target.value)}
+          onChange={(e) => setUserInput(e.target.value)}
           value={userInput}
-        ></input>
-        <Button className={styles.btn} textButton='Add Task' />
+        />
+        <Button className={styles.btn_submit} textButton='Add Task' />
       </form>
     </div>
   );

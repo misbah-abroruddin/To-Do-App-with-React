@@ -12,13 +12,17 @@
   -webkit-backdrop-filter: blur(19.6px);
 }
 
+.text_center {
+  text-align: center;
+}
+
 .btn {
   font-weight: bold;
   padding: 8px;
   border: none;
-  border-radius: 5px;
-  width: 20%;
-  align-self: flex-start;
+  border-radius: 30px;
+  flex-basis: 20%;
+  align-self: center;
   cursor: pointer;
   background-color: rgb(15, 76, 117);
   color: white;
@@ -28,7 +32,7 @@
   background-color: rgb(65, 53, 67);
 }
 
-.text_center {
+.text_header {
   font-size: 25px;
   margin-bottom: 10px;
   text-align: center;
@@ -44,11 +48,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-self: center;
+  align-items: center;
   text-align: left;
   border-radius: 10px;
-  padding: 10px;
-  width: 90%;
+  padding: 15px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -56,7 +60,9 @@
 }
 
 .list {
-  align-self: center;
+  display: flex;
+  column-gap: 10px;
+  padding-block: 8px;
 }
 
 .form_wrapper {
@@ -89,7 +95,85 @@
   outline: 2px solid rgb(20, 40, 80);
 }
 
+.btn_submit {
+  font-weight: bold;
+  margin-top: 5px;
+  padding-block: 11px;
+  border: none;
+  border-radius: 30px;
+  width: 25%;
+  align-self: flex-end;
+  cursor: pointer;
+  background-color: rgb(15, 76, 117);
+  color: white;
+}
+
+.btn_submit:hover {
+  background-color: rgb(65, 53, 67);
+}
+
 .text {
   font-size: 10px;
   color: red;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 22px;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: #ccc;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #b3b3b3;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

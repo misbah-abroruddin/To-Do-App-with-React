@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Form from "../components/Form/Form.component";
-import List from "../components/List/List.component";
-import styles from "./ToDo.module.css";
+import Form from '../components/Form/Form.component';
+import List from '../components/List/List.component';
+import styles from './ToDo.module.css';
 
 const ToDo = () => {
   const [tasks, setTasks] = useState([]);
@@ -20,13 +20,22 @@ const ToDo = () => {
     setTasks(mapArr);
   };
 
+  const handleDelete = (id) => {
+    const newTask = tasks.filter((task) => task.id !== id);
+    setTasks(newTask);
+  };
+
   return (
     <>
-      <div className={styles.wrapper}>
-        <h2 className={styles.text_left}>To do App</h2>
+      <section className={styles.wrapper}>
+        <h2 className={styles.text_header}>To Do List App</h2>
         <Form handleSubmit={handleOnClick} />
-      </div>
-      <List tasks={tasks} handleTogle={handleTogle} />
+      </section>
+      <List
+        tasks={tasks}
+        handleTogle={handleTogle}
+        handleDelete={handleDelete}
+      />
     </>
   );
 };
